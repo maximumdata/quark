@@ -1,0 +1,8 @@
+// reliably lighten a color, without blowing it out to full white, see http://sass-guidelin.es/#lightening-and-darkening-colors 
+@function tint($color, $percentage)
+  @return mix(white, $color, $percentage)
+
+// same as above, but for darkening
+@function shade($color, $percentage)
+  @return mix(black, $color, $percentage)
+    
