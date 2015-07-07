@@ -6,3 +6,15 @@
 @function shade($color, $percentage)
   @return mix(black, $color, $percentage)
     
+// responisive font sizes using sass maps
+// map example: 
+// $small: 'max-width: 500px'
+// $medium: 'min-width: 501px) and (max-width: 768px'
+// $large: 'min-width: 769px'
+// $p-font-sizes: ( $small: 12px, $medium: 18px, $large: 24px )
+
+@mixin font-size($map)
+  @each $breakpoint, $font-size in $map
+    @media screen and (#{$breakpoint})
+      font-size: #{$font-size}
+      
